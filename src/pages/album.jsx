@@ -13,7 +13,7 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { Router, Route } from "react-router";
 
 function Copyright() {
   return (
@@ -180,8 +180,10 @@ export default function Album() {
                   </CardContent>
                   <CardActions>
                     {card.options.map((option) => (
-                      <Button size="small" color="primary" onClick=''>
-                        {option.way}
+                      <Button size="small" color="primary">
+                        <Link color="inherit" href={option.link}>
+                          {option.way}
+                        </Link>
                       </Button>
                     ))}
                   </CardActions>
